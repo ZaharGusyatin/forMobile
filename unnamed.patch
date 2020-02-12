@@ -1,0 +1,445 @@
+Index: app/src/main/java/com/example/qwer/Array.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/qwer/Array.java	(revision 30b342d646521eb8f34607ef7b663cc358e4ad16)
++++ app/src/main/java/com/example/qwer/Array.java	(date 1581520379525)
+@@ -25,4 +25,33 @@
+         R.string.lvl8,
+         R.string.lvl9,
+     };
++
++
++        final int[] text12 = {
++                R.string.levelk17,
++                R.string.levelk2,
++                R.string.levelk3,
++                R.string.levelk4,
++                R.string.levelk5,
++                R.string.levelk11,
++                R.string.levelk14,
++                R.string.levelk15,
++                R.string.levelk16,
++                R.string.levelk17,
++                R.string.levelk22,
++                R.string.levelk21,
++                R.string.levelk18,
++                R.string.levelk19,
++                R.string.levelk0,
++                R.string.levelk1,
++                R.string.levelk6,
++                R.string.levelk10,
++                R.string.levelk9,
++                R.string.levelk12,
++                R.string.levelk13,
++
++
++        };
++
++
+ }
+\ No newline at end of file
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(revision 30b342d646521eb8f34607ef7b663cc358e4ad16)
++++ app/src/main/res/values/strings.xml	(date 1581513854349)
+@@ -5,6 +5,7 @@
+     <string name="start">Привет, меня зовут Захар, и я пробую делать что то на андроид, с каждым уровнем я буду давать тебе интересные факты, поэтому если тебе интересно, то в бой!!!</string>
+     <string name="lvl">Уровень:</string>
+     <string name="lvl1">Уровень 1</string>
++    <string name="levelushaka3">Уровень 3</string>
+     <string name="Paris2">Нажимай на число, что меньше и проходи дальше</string>
+     <string name="lvl12345">Уровень 2</string>
+     <string name="GoOn">Продолжить</string>
+@@ -14,7 +15,7 @@
+     <string name="Flowers2">А теперь про уровень! Это легкий уровень, кликай на число что больше другого, не боись, дальше будет сложнее</string>
+     <string name="montains2">а теперь попробуем наоборот, кликай по тем, что меньше(проверка приложения)</string>
+     <string name="RIGHT">Уровень:</string>
+-    <string name="True">Правда</string>
+-    <string name="False">Неправда!!!</string>
++    <string name="True">да</string>
++    <string name="False">неа!!!</string>
+     <string name="Flowers">Белых цветов не бывает – на самом деле они бесцветные, то есть не имеющие каких-либо цветных пигментов и просто отражающие солнечный свет. Чёрного пигмента в мире цветов также не существует – цвет может быть либо тёмно-красным, либо насыщенно фиолетовым.</string>
+ </resources>
+Index: app/src/main/java/com/example/qwer/level3.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/qwer/level3.java	(revision 30b342d646521eb8f34607ef7b663cc358e4ad16)
++++ app/src/main/java/com/example/qwer/level3.java	(date 1581520917228)
+@@ -1,18 +1,22 @@
+ package com.example.qwer;
+ 
++import androidx.annotation.RequiresApi;
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import android.app.Dialog;
+ import android.content.Intent;
+ import android.graphics.Color;
+ import android.graphics.drawable.ColorDrawable;
++import android.os.Build;
+ import android.os.Bundle;
++import android.view.MotionEvent;
+ import android.view.View;
+ import android.view.Window;
+ import android.view.WindowManager;
+ import android.view.animation.Animation;
+ import android.view.animation.AnimationUtils;
+ import android.widget.Button;
++import android.widget.ImageView;
+ import android.widget.TextView;
+ 
+ import java.util.Random;
+@@ -20,15 +24,27 @@
+ public class level3 extends AppCompatActivity {
+     Dialog dialog;
+ 
++    public int numquestion;
++
++    public int count = 0;
++
++
++    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
++        final Random random = new Random();
++        final Array array = new Array();
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activite_lvl3);
++        final Button btnRight = findViewById(R.id.btnRIGHT);
++        final Button btnLeft = findViewById(R.id.btnLEFT);
++        final TextView btnAnswer = findViewById(R.id.button4);
++final ImageView imageView =findViewById(R.id.imageView10);
++        final TextView tvQuestion = findViewById(R.id.question);
+ 
+-        final TextView tvright = findViewById(R.id.textRIGHT);
+-        final TextView tvleft = findViewById(R.id.textLEFT);
+-        final Random random = new Random();
+-        final int[] progress = {
++      /*  imgLeft.setClipToOutline(true);
++        imgRight.setClipToOutline(true);*/
++        final  int []progress={
+                 R.id.point1,
+                 R.id.point2,
+                 R.id.point3,
+@@ -38,11 +54,11 @@
+                 R.id.point7,
+                 R.id.point8,
+                 R.id.point9,
+-                R.id.point10,};
++                R.id.point10,
+ 
++        };
+         final Animation a = AnimationUtils.loadAnimation(level3.this, R.anim.alfa);
+         Window w = getWindow();
+-        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+         Button b1 = (Button) findViewById(R.id.button2);
+         b1.setOnClickListener(new View.OnClickListener() {
+             @Override
+@@ -56,9 +72,12 @@
+                 }
+             }
+         });
++        TextView tv = findViewById(R.id.textView);
++        tv.setText(R.string.levelushaka3);
++        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+         dialog = new Dialog(this);
+         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);//скрываем заголовок
+-        dialog.setContentView(R.layout.preview_dialog_3);//путь к макету
++        dialog.setContentView(R.layout.preview_dialog);//путь к макету
+         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//прозрачный фон окна
+         dialog.setCancelable(false);//нельзя закрыть кнопкой нозад
+         TextView x = (TextView) dialog.findViewById(R.id.X);
+@@ -84,5 +103,136 @@
+             }
+         });
+         dialog.show();
+-    }
+-}
++        //???????????????????????????????
++
++
++        //???????????????????????????????
++       numquestion = random.nextInt(21);
++       tvQuestion.setText(array.text12[numquestion]);
++
++        btnRight.setOnTouchListener(new View.OnTouchListener() {//ckick no
++            @Override
++            public boolean onTouch(View v, MotionEvent event) {
++                if (event.getAction() == MotionEvent.ACTION_DOWN) {//коснулся начало
++                    btnLeft.setEnabled(false);
++                    if (numquestion>11) {
++                        imageView.setImageResource(R.drawable.img_true);
++                    } else {
++                        imageView.setImageResource(R.drawable.img_wrong);
++
++                    }
++                } else if (event.getAction() == MotionEvent.ACTION_UP) {//отпустил
++                    if(numquestion>11){
++                        if(count<10){
++                            count=count+1;
++                        }
++                        for (int b=0;b<10;b++){
++                            TextView qwe=findViewById(progress[b]);
++                            qwe.setBackgroundResource(R.drawable.style_points1);
++                        }
++                        for(int b=0;b<count;b++){
++                            TextView qwe =findViewById(progress[b]);
++                            qwe.setBackgroundResource(R.drawable.style_points12);
++                        }
++                    }else{//права больше левой
++                        if (count>0){// больше нкля
++                            if(count==1){
++                                count=0;
++                            }
++                            else{count=count-1;}}
++
++                        for (int b=0;b<9;b++){
++                            TextView qwe=findViewById(progress[b]);
++                            qwe.setBackgroundResource(R.drawable.style_points1);
++                        }
++                        for(int b=0;b<count;b++){
++                            TextView qwe =findViewById(progress[b]);
++                            qwe.setBackgroundResource(R.drawable.style_points12);
++                        }
++
++                    } if (count==10){
++                       Intent intent= new Intent(level3.this,Level4.class);
++                       startActivity(intent);
++
++                    }else{
++                        numquestion = random.nextInt(21);
++                        tvQuestion.setText(array.text12[numquestion]);
++
++                        /*tvQuestion.startAnimation(a);*/
++
++                        imageView.startAnimation(a);
++
++                        btnLeft.setEnabled(true);
++
++
++                    }
++
++                }
++                return true;
++            }
++        });
++        btnLeft.setOnTouchListener(new View.OnTouchListener() {
++            @Override
++            public boolean onTouch(View v, MotionEvent event) {
++                if (event.getAction() == MotionEvent.ACTION_DOWN) {//коснулся начало
++                    btnRight.setEnabled(false);
++                    if (numquestion<12) {
++                        imageView.setImageResource(R.drawable.img_true);
++                    } else {
++                        imageView.setImageResource(R.drawable.img_wrong);
++
++                    }
++                } else if (event.getAction() == MotionEvent.ACTION_UP) {//отпустил
++                    if(numquestion<12){
++                        if(count<10){
++                            count=count+1;
++                        }
++                        for (int b=0;b<10;b++){
++                            TextView qwe=findViewById(progress[b]);
++                            qwe.setBackgroundResource(R.drawable.style_points1);
++                        }
++                        for(int b=0;b<count;b++){
++                            TextView qwe =findViewById(progress[b]);
++                            qwe.setBackgroundResource(R.drawable.style_points12);
++                        }
++                    }else{//права больше левой
++                        if (count>0){// больше нкля
++                            if(count==1){
++                                count=0;
++                            }
++                            else{count=count-1;}}
++
++                        for (int b=0;b<9;b++){
++                            TextView qwe=findViewById(progress[b]);
++                            qwe.setBackgroundResource(R.drawable.style_points1);
++                        }
++                        for(int b=0;b<count;b++){
++                            TextView qwe =findViewById(progress[b]);
++                            qwe.setBackgroundResource(R.drawable.style_points12);
++                        }
++
++                    } if (count==10){
++                        Intent intent= new Intent(level3.this,Level4.class);
++                        startActivity(intent);
++
++                    }else{
++                        numquestion = random.nextInt(21);
++                        tvQuestion.setText(array.text12[numquestion]);
++
++                        /*tvQuestion.startAnimation(a);*/
++
++                        imageView.startAnimation(a);
++
++                        btnLeft.setEnabled(true);
++
++
++                    }
++
++                }
++                return true;
++            }
++        });
++
++    }
++}
++
+Index: app/src/main/java/com/example/qwer/Level1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/qwer/Level1.java	(revision 30b342d646521eb8f34607ef7b663cc358e4ad16)
++++ app/src/main/java/com/example/qwer/Level1.java	(date 1581514226228)
+@@ -31,9 +31,8 @@
+     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+-
+-        final Array array = new Array();
+         final Random random = new Random();
++        final Array array = new Array();
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.universal);
+         final ImageView imgLeft = findViewById(R.id.ImLEFT);
+Index: app/src/main/res/anim/alfa.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/anim/alfa.xml	(revision 30b342d646521eb8f34607ef7b663cc358e4ad16)
++++ app/src/main/res/anim/alfa.xml	(date 1581282285332)
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <set xmlns:android="http://schemas.android.com/apk/res/android">
+ <alpha
+-    android:duration="20000"
++    android:duration="200"
+     android:fromAlpha="0.0"
+     android:toAlpha="1.0"
+     >
+Index: app/src/main/res/layout/activite_lvl3.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activite_lvl3.xml	(revision 30b342d646521eb8f34607ef7b663cc358e4ad16)
++++ app/src/main/res/layout/activite_lvl3.xml	(date 1581518277840)
+@@ -164,9 +164,10 @@
+                     android:layout_width="match_parent"
+                     android:layout_height="260dp"
+                     android:layout_weight="2"
++                    android:background="@drawable/grey"
+                     android:text="TextView"
+-                    android:textSize="30dp"
+-                    android:background="@drawable/grey"/>
++                    android:textColor="@color/blaaaaaaaaaaaack"
++                    android:textSize="30dp" />
+ 
+             </LinearLayout>
+ 
+@@ -178,7 +179,7 @@
+                 android:layout_marginTop="10dp">
+ 
+                 <Button
+-                    android:id="@+id/textLEFT"
++                    android:id="@+id/btnLEFT"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_marginRight="5dp"
+@@ -189,7 +190,7 @@
+                     android:textSize="18dp"
+                     android:textAllCaps="false"/>
+                 <Button
+-                    android:id="@+id/textRIGHT"
++                    android:id="@+id/btnRIGHT"
+                     android:gravity="center"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+@@ -204,5 +205,11 @@
+             </LinearLayout>
+         </LinearLayout>
+ 
++        <TextView
++            android:id="@+id/button4"
++            android:layout_width="1dp"
++            android:layout_height="1dp"
++            android:text="Button" />
++
+     </LinearLayout>
+ </RelativeLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/qwer/Level4.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/qwer/Level4.java	(date 1581520814584)
++++ app/src/main/java/com/example/qwer/Level4.java	(date 1581520814584)
+@@ -0,0 +1,14 @@
++package com.example.qwer;
++
++import androidx.appcompat.app.AppCompatActivity;
++
++import android.os.Bundle;
++
++public class Level4 extends AppCompatActivity {
++
++    @Override
++    protected void onCreate(Bundle savedInstanceState) {
++        super.onCreate(savedInstanceState);
++        setContentView(R.layout.activity_level4);
++    }
++}
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/AndroidManifest.xml	(revision 30b342d646521eb8f34607ef7b663cc358e4ad16)
++++ app/src/main/AndroidManifest.xml	(date 1581520814579)
+@@ -9,13 +9,13 @@
+         android:roundIcon="@mipmap/ic_launcher_round"
+         android:supportsRtl="true"
+         android:theme="@style/AppTheme">
+-        <activity android:name=".level3"
++        <activity android:name=".Level4"></activity>
++        <activity
++            android:name=".level3"
+             android:screenOrientation="portrait">
+             <intent-filter>
+                 <category android:name="android.intent.category.DEFAULT" />
+             </intent-filter>
+-
+-
+         </activity>
+         <activity
+             android:name=".MainActivity"
+Index: app/src/main/res/layout/activity_level4.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_level4.xml	(date 1581520814573)
++++ app/src/main/res/layout/activity_level4.xml	(date 1581520814573)
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="utf-8"?>
++<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context=".Level4">
++
++</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file

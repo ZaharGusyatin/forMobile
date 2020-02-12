@@ -25,4 +25,33 @@ public class Array {
         R.string.lvl8,
         R.string.lvl9,
     };
+
+
+        final int[] text12 = {
+                R.string.levelk17,
+                R.string.levelk2,
+                R.string.levelk3,
+                R.string.levelk4,
+                R.string.levelk5,
+                R.string.levelk11,
+                R.string.levelk14,
+                R.string.levelk15,
+                R.string.levelk16,
+                R.string.levelk17,
+                R.string.levelk22,
+                R.string.levelk21,
+                R.string.levelk18,
+                R.string.levelk19,
+                R.string.levelk0,
+                R.string.levelk1,
+                R.string.levelk6,
+                R.string.levelk10,
+                R.string.levelk9,
+                R.string.levelk12,
+                R.string.levelk13,
+
+
+        };
+
+
 }

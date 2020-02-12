@@ -31,9 +31,8 @@ public class Level1 extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        final Array array = new Array();
         final Random random = new Random();
+        final Array array = new Array();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universal);
         final ImageView imgLeft = findViewById(R.id.ImLEFT);
