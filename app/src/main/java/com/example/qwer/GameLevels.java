@@ -72,5 +72,16 @@ public class GameLevels extends AppCompatActivity {
 
         }
     }
+
+    public void level4(View view) {
+        try {
+            Intent intent = new Intent(GameLevels.this, Level4.class);
+            startActivity(intent);
+            finish();
+
+        } catch (Exception e) {
+
+        }
+    }
 }
 

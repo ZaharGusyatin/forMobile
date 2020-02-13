@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="level4_0">Россия - Москва</string>
+    <string name="level4_1">Мадагаскар - Антананариву</string>
+    <string name="level4_2"> Ирак - Багдад </string>
+    <string name="level4_3">Сербия - Белград  </string>
+    <string name="level4_4">Алжир - Алжир</string>
+    <string name="level4_5">Багамы - Нассау </string>
+    <string name="level4_6">Бельгия	- Брюссель </string>
+    <string name="level4_7">Бразилия - Бразилиа </string>
+    <string name="level4_8"> Венгрия - Будапешт</string>
+    <string name="level4_9">Вьетнам - Ханой </string>
+    <string name="level4_10">Греция - Афины </string>
+    <string name="level4_11">Грузия - Тбилиси</string>
+    <string name="level4_12">Египет - Каир</string>
+    <string name="level4_13">Индонезия - Джакарта </string>
+    <string name="level4_14">Иран - Тегеран</string>
+    <string name="level4_15">Испания - Мадрид </string>
+    <string name="level4_16">Исландия - Рейкьявик</string>
+    <string name="level4_17">Казахстан - Астана </string>
+    <string name="level4_18">Канада - Оттава </string>
+    <string name="level4_19">Украина - Киев=) </string>
+    <string name="level4_20">Уругвай - Монтевидео </string>
+    <string name="level4_21">Хорватия - Загреб</string>
+    <string name="level4_22">Чили - Сантьяго</string>
+    <string name="level4_23">Япония - Токио</string>
+    <string name="level4_24">Ямайка - Кингстон</string>
+    <string name="level4_25">Франция - Париж</string>
+    <string name="level4_26">Франция - Мадрид</string>
+    <string name="level4_27">Япония - Пекин </string>
+    <string name="level4_28">Канада - Остава </string>
+    <string name="level4_29">Мадагаскар - Джакарта</string>..................
+    <string name="level4_30">Мадагаскар - Кингстон</string>
+    <string name="level4_31">Мадагаскар - Тбилиси</string>
+    <string name="level4_32">Мадагаскар - Багдад</string>
+    <string name="level4_33">Хорватия - Астана</string>
+    <string name="level4_34">Канада - Сантьяго </string>
+    <string name="level4_35">Исландия - Джакарта</string>
+    <string name="level4_36">Исландия - Кингстон</string>
+    <string name="level4_37">Исландия - Тбилиси</string>
+    <string name="level4_38">Исландия - Багдад</string>
+    <string name="level4_39">Исландия - Астана</string>
+
+</resources>

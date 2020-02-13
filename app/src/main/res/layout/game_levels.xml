@@ -89,7 +89,8 @@
                             android:gravity="center"
                             android:text="4"
                             android:textSize="40dp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:onClick="level4"/>
 
                         <TextView
                             android:id="@+id/textView55"

@@ -38,7 +38,7 @@ public class level3 extends AppCompatActivity {
         setContentView(R.layout.activite_lvl3);
         final Button btnRight = findViewById(R.id.btnRIGHT);
         final Button btnLeft = findViewById(R.id.btnLEFT);
-        final TextView btnAnswer = findViewById(R.id.button4);
+
 final ImageView imageView =findViewById(R.id.imageView10);
         final TextView tvQuestion = findViewById(R.id.question);
 
@@ -77,7 +77,7 @@ final ImageView imageView =findViewById(R.id.imageView10);
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);//скрываем заголовок
-        dialog.setContentView(R.layout.preview_dialog);//путь к макету
+        dialog.setContentView(R.layout.previewforlvl3);//путь к макету
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//прозрачный фон окна
         dialog.setCancelable(false);//нельзя закрыть кнопкой нозад
         TextView x = (TextView) dialog.findViewById(R.id.X);
@@ -107,7 +107,7 @@ final ImageView imageView =findViewById(R.id.imageView10);
 
 
         //???????????????????????????????
-       numquestion = random.nextInt(21);
+       numquestion = random.nextInt(20);
        tvQuestion.setText(array.text12[numquestion]);
 
         btnRight.setOnTouchListener(new View.OnTouchListener() {//ckick no
@@ -115,14 +115,14 @@ final ImageView imageView =findViewById(R.id.imageView10);
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {//коснулся начало
                     btnLeft.setEnabled(false);
-                    if (numquestion>11) {
+                    if (numquestion>9) {
                         imageView.setImageResource(R.drawable.img_true);
                     } else {
                         imageView.setImageResource(R.drawable.img_wrong);
 
                     }
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {//отпустил
-                    if(numquestion>11){
+                    if(numquestion>9){
                         if(count<10){
                             count=count+1;
                         }
@@ -155,7 +155,7 @@ final ImageView imageView =findViewById(R.id.imageView10);
                        startActivity(intent);
 
                     }else{
-                        numquestion = random.nextInt(21);
+                        numquestion = random.nextInt(20);
                         tvQuestion.setText(array.text12[numquestion]);
 
                         /*tvQuestion.startAnimation(a);*/
@@ -176,14 +176,14 @@ final ImageView imageView =findViewById(R.id.imageView10);
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {//коснулся начало
                     btnRight.setEnabled(false);
-                    if (numquestion<12) {
+                    if (numquestion<10) {
                         imageView.setImageResource(R.drawable.img_true);
                     } else {
                         imageView.setImageResource(R.drawable.img_wrong);
 
                     }
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {//отпустил
-                    if(numquestion<12){
+                    if(numquestion<10){
                         if(count<10){
                             count=count+1;
                         }
@@ -216,14 +216,14 @@ final ImageView imageView =findViewById(R.id.imageView10);
                         startActivity(intent);
 
                     }else{
-                        numquestion = random.nextInt(21);
+                        numquestion = random.nextInt(20);
                         tvQuestion.setText(array.text12[numquestion]);
 
                         /*tvQuestion.startAnimation(a);*/
 
                         imageView.startAnimation(a);
 
-                        btnLeft.setEnabled(true);
+                        btnRight.setEnabled(true);
 
 
                     }

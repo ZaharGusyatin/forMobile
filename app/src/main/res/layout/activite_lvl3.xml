@@ -205,11 +205,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/button4"
-            android:layout_width="1dp"
-            android:layout_height="1dp"
-            android:text="Button" />
 
     </LinearLayout>
 </RelativeLayout>

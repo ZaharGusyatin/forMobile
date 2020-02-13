@@ -1,48 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="levelk0">В 2014 году Аральское море полностью высохло.</string>
-    <string name="levelk1">На самом деле Наполеон Бонапарт был ростом около 180 сантиметров.</string>
-    <string name="levelk2">К началу Первой мировой войны в Африке не было ни одного независимого государства.</string>
-    <string name="levelk3">В 60–80-х годах курс доллара составлял меньше одного рубля.</string>
-    <string name="levelk4">В 1935 году Нобелевской премией мира был награжден человек из Третьего рейха.</string>
-    <string name="levelk5">Первым программистом в истории считается женщина.</string>
-    <string name="levelk6">Рибосомы – это органеллы клетки, в которых образуется энергия, необходимая для существования организма.</string>
-    <string name="levelk7">Российский город Дербент древнее египетского Каира.</string>
-    <string name="levelk8">Период творчества Пабло Пикассо в Барселоне называется «розовым».</string>
-    <string name="levelk9">Первую железную дорогу общественного пользования, рассчитанную на паровозы, построили в США.</string>
-    <string name="levelk10">столица Молдовы - Бухарест</string>
-    <string name="levelk11">Амстердам - столица Голландии</string>
-    <string name="levelk12">Брюсель - столица капусты</string>
-    <string name="levelk13">В Древнем мире, как и в Средневековье, римляне использовали туалетную бумагу</string>
-    <string name="levelk14">Бог любит тебя</string>
-    <string name="levelk15">Бог любит всех</string>
-    <string name="levelk16">Еноты – отдаленные родственники медведей.</string>
-    <string name="levelk17">Гнездо, которое создают пингвины, как правило тоже становится постоянным: в большинстве случаев пингвины гнездуются там, где сами появились на свет.</string>
-    <string name="levelk18">Дед Мороз существует</string>
-    <string name="levelk19">собаки любят мяукать</string>
-    <string name="levelk21">коты любят гавкать</string>
-    <string name="levelk22">Осел из Шрека очень любит вафельки</string>
-    <string name="q0">0</string>
-    <string name="q1">0</string>
-    <string name="q2">1</string>
-    <string name="q3">1</string>
-    <string name="q4">1</string>
-    <string name="q5">1</string>
-    <string name="q6">0</string>
-    <string name="q7">1</string>
-    <string name="q8">0</string>
-    <string name="q9">0</string>
-    <string name="q10">0</string>
-    <string name="q11">1</string>
-    <string name="q12">0</string>
-    <string name="q13">0</string>
-    <string name="q14">1</string>
-    <string name="q15">1</string>
-    <string name="q16">1</string>
-    <string name="q17">1</string>
-    <string name="q18">0</string>
-    <string name="q19">0</string>
-
+    <string name="level3_0">Были у Иисуса сестры?</string>
+    <string name="level3_1">Вирсавия - мать Соломона</string>
+    <string name="level3_2">Зависть является гнилью для костей</string>
+    <string name="level3_3">Иоан обвинял Бога в милости</string>
+    <string name="level3_4">Адам ниразу не родился, но два раза умер</string>
+    <string name="level3_5">Енох был самым старым пророком</string>
+    <string name="level3_6">Отца Саула звали Кис</string>
+    <string name="level3_7">Первым кого хотели лишить жизни из за Христа - Лазарь</string>
+    <string name="level3_8">пир Артаксеркса продолжался 6 месяцев</string>
+    <string name="level3_9">Сапфира была вдовой три часа</string>
+    <string name="level3_10">Ной был самым старым пророком</string>
+    <string name="level3_11">Сапфира - мать Соломона</string>
+    <string name="level3_12">Гнев является гнилью для костей</string>
+    <string name="level3_13">Иоан обвинял Бога в жестокости</string>
+    <string name="level3_14">Адам два раза родился, и два раза умер</string>
+    <string name="level3_15"> У Иисуса не было сестер</string>
+    <string name="level3_16">Отца Саула звали Кир</string>
+    <string name="level3_17">пир Артаксеркса продолжался 9 месяцев</string>
+    <string name="level3_18">Иисус вкушал пасху с 11-ю учениками</string>
+    <string name="level3_19">Иоанна заставили нести крест Иисуса</string>
 
 
 </resources>
