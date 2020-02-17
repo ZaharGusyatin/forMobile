@@ -27,4 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    public void CLICK(View view) {
+    }
 }

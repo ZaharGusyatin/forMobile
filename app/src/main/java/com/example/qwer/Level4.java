@@ -89,7 +89,7 @@ public class Level4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level4.this, Level5.class);
+                    Intent intent = new Intent(Level4.this, level_5.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -157,7 +157,7 @@ public class Level4 extends AppCompatActivity {
                         }
 
                     } if (count==15){
-                        Intent intent= new Intent(Level4.this,Level5.class);
+                        Intent intent= new Intent(Level4.this,level_5.class);
                         startActivity(intent);
 
                     }else{
@@ -218,7 +218,7 @@ public class Level4 extends AppCompatActivity {
                         }
 
                     } if (count==15){
-                        Intent intent= new Intent(Level4.this,Level5.class);
+                        Intent intent= new Intent(Level4.this,level_5.class);
                         startActivity(intent);
 
                     }else{
