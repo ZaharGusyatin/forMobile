@@ -197,7 +197,7 @@ public class Level2 extends AppCompatActivity {
                         }
 
                     } if (count==20){
-                        Intent intent = new Intent(Level2.this,level3.class);
+                        Intent intent = new Intent(Level2.this, Level_3.class);
                         startActivity(intent);
 
                     }else{
@@ -262,7 +262,7 @@ public class Level2 extends AppCompatActivity {
                         }
 
                     } if (count==20){
-                        Intent intent = new Intent(Level2.this, level3.class);
+                        Intent intent = new Intent(Level2.this, Level_3.class);
                         startActivity(intent);
 
                     }else{

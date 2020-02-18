@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class level3 extends AppCompatActivity {
+public class Level_4 extends AppCompatActivity {
     Dialog dialog;
 
     public int numquestion;
@@ -35,11 +35,10 @@ public class level3 extends AppCompatActivity {
         final Random random = new Random();
         final Array array = new Array();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activite_lvl3);
+        setContentView(R.layout.activity_level_4);
         final Button btnRight = findViewById(R.id.btnRIGHT);
         final Button btnLeft = findViewById(R.id.btnLEFT);
-
-final ImageView imageView =findViewById(R.id.imageView10);
+        final ImageView imageView =findViewById(R.id.imageView10);
         final TextView tvQuestion = findViewById(R.id.question);
 
       /*  imgLeft.setClipToOutline(true);
@@ -55,16 +54,21 @@ final ImageView imageView =findViewById(R.id.imageView10);
                 R.id.point8,
                 R.id.point9,
                 R.id.point10,
+                R.id.point11,
+                R.id.point12,
+                R.id.point13,
+                R.id.point14,
+                R.id.point15,
 
         };
-        final Animation a = AnimationUtils.loadAnimation(level3.this, R.anim.alfa);
+        final Animation a = AnimationUtils.loadAnimation(Level_4.this, R.anim.alfa);
         Window w = getWindow();
         Button b1 = (Button) findViewById(R.id.button2);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(level3.this, GameLevels.class);
+                    Intent intent = new Intent(Level_4.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -73,11 +77,11 @@ final ImageView imageView =findViewById(R.id.imageView10);
             }
         });
         TextView tv = findViewById(R.id.textView);
-        tv.setText(R.string.levelushaka3);
+        tv.setText(R.string.levelushaka4);
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);//скрываем заголовок
-        dialog.setContentView(R.layout.previewforlvl3);//путь к макету
+        dialog.setContentView(R.layout.previewforlvl4);//путь к макету
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//прозрачный фон окна
         dialog.setCancelable(false);//нельзя закрыть кнопкой нозад
         TextView x = (TextView) dialog.findViewById(R.id.X);
@@ -85,7 +89,7 @@ final ImageView imageView =findViewById(R.id.imageView10);
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(level3.this, GameLevels.class);
+                    Intent intent = new Intent(Level_4.this, Level_5.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -107,23 +111,23 @@ final ImageView imageView =findViewById(R.id.imageView10);
 
 
         //???????????????????????????????
-       numquestion = random.nextInt(20);
-       tvQuestion.setText(array.text12[numquestion]);
+        numquestion = random.nextInt(40);
+        tvQuestion.setText(array.forLevel4[numquestion]);
 
         btnRight.setOnTouchListener(new View.OnTouchListener() {//ckick no
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {//коснулся начало
                     btnLeft.setEnabled(false);
-                    if (numquestion>9) {
+                    if (numquestion>28) {
                         imageView.setImageResource(R.drawable.img_true);
                     } else {
                         imageView.setImageResource(R.drawable.img_wrong);
 
                     }
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {//отпустил
-                    if(numquestion>9){
-                        if(count<10){
+                    if(numquestion>28){
+                        if(count<15){
                             count=count+1;
                         }
                         for (int b=0;b<10;b++){
@@ -136,12 +140,14 @@ final ImageView imageView =findViewById(R.id.imageView10);
                         }
                     }else{//права больше левой
                         if (count>0){// больше нкля
-                            if(count==1){
+                            if(count>=1){
                                 count=0;
-                            }
-                            else{count=count-1;}}
+                            }else{
 
-                        for (int b=0;b<9;b++){
+                            }
+                            }
+
+                        for (int b=0;b<14;b++){
                             TextView qwe=findViewById(progress[b]);
                             qwe.setBackgroundResource(R.drawable.style_points1);
                         }
@@ -150,13 +156,13 @@ final ImageView imageView =findViewById(R.id.imageView10);
                             qwe.setBackgroundResource(R.drawable.style_points12);
                         }
 
-                    } if (count==10){
-                       Intent intent= new Intent(level3.this,Level4.class);
-                       startActivity(intent);
+                    } if (count==15){
+                        Intent intent= new Intent(Level_4.this, Level_5.class);
+                        startActivity(intent);
 
                     }else{
-                        numquestion = random.nextInt(20);
-                        tvQuestion.setText(array.text12[numquestion]);
+                        numquestion = random.nextInt(40);
+                        tvQuestion.setText(array.forLevel4[numquestion]);
 
                         /*tvQuestion.startAnimation(a);*/
 
@@ -176,15 +182,15 @@ final ImageView imageView =findViewById(R.id.imageView10);
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {//коснулся начало
                     btnRight.setEnabled(false);
-                    if (numquestion<10) {
+                    if (numquestion<29) {
                         imageView.setImageResource(R.drawable.img_true);
                     } else {
                         imageView.setImageResource(R.drawable.img_wrong);
 
                     }
                 } else if (event.getAction() == MotionEvent.ACTION_UP) {//отпустил
-                    if(numquestion<10){
-                        if(count<10){
+                    if(numquestion<29){
+                        if(count<15){
                             count=count+1;
                         }
                         for (int b=0;b<10;b++){
@@ -197,12 +203,12 @@ final ImageView imageView =findViewById(R.id.imageView10);
                         }
                     }else{//права больше левой
                         if (count>0){// больше нкля
-                            if(count==1){
+                            if(count>=1){
                                 count=0;
                             }
-                            else{count=count-1;}}
+                            else{}}
 
-                        for (int b=0;b<9;b++){
+                        for (int b=0;b<14;b++){
                             TextView qwe=findViewById(progress[b]);
                             qwe.setBackgroundResource(R.drawable.style_points1);
                         }
@@ -211,13 +217,13 @@ final ImageView imageView =findViewById(R.id.imageView10);
                             qwe.setBackgroundResource(R.drawable.style_points12);
                         }
 
-                    } if (count==10){
-                        Intent intent= new Intent(level3.this,Level4.class);
+                    } if (count==15){
+                        Intent intent= new Intent(Level_4.this, Level_5.class);
                         startActivity(intent);
 
                     }else{
-                        numquestion = random.nextInt(20);
-                        tvQuestion.setText(array.text12[numquestion]);
+                        numquestion = random.nextInt(40);
+                        tvQuestion.setText(array.forLevel4[numquestion]);
 
                         /*tvQuestion.startAnimation(a);*/
 

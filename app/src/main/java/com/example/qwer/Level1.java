@@ -300,5 +300,6 @@ public class Level1 extends AppCompatActivity {
             }
 
         }
-    }
+
+}
 

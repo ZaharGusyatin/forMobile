@@ -64,7 +64,7 @@ public class GameLevels extends AppCompatActivity {
 
     public void lvl3(View view) {
         try {
-            Intent intent = new Intent(GameLevels.this, level3.class);
+            Intent intent = new Intent(GameLevels.this, Level_3.class);
             startActivity(intent);
             finish();
 
@@ -75,7 +75,7 @@ public class GameLevels extends AppCompatActivity {
 
     public void level4(View view) {
         try {
-            Intent intent = new Intent(GameLevels.this, Level4.class);
+            Intent intent = new Intent(GameLevels.this, Level_4.class);
             startActivity(intent);
             finish();
 
@@ -86,7 +86,7 @@ public class GameLevels extends AppCompatActivity {
 
     public void lvl5(View view) {
         try {
-            Intent intent = new Intent(GameLevels.this, level_5.class);
+            Intent intent = new Intent(GameLevels.this, Level_5.class);
             startActivity(intent);
             finish();
 
