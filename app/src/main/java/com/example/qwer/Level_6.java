@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Level_5 extends AppCompatActivity {
+public class Level_6 extends AppCompatActivity {
     LinearLayout tvRed, tvYel, tvGree;
     private boolean a = false;
     Button click, btncatch;
@@ -38,7 +38,7 @@ public class Level_5 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_level_5);
+        setContentView(R.layout.activity_level_6);
         tvGree = (LinearLayout) findViewById(R.id.LinGreen);
         tvRed = (LinearLayout) findViewById(R.id.LinRed);
         tvYel = (LinearLayout) findViewById(R.id.LinYellow);
@@ -52,7 +52,7 @@ public class Level_5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level_5.this, GameLevels.class);
+                    Intent intent = new Intent(Level_6.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -73,7 +73,7 @@ public class Level_5 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level_5.this, Level_5.class);
+                    Intent intent = new Intent(Level_6.this, Level_6.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e) {
@@ -122,7 +122,7 @@ public class Level_5 extends AppCompatActivity {
                                 break;
                         }
                         try {
-                            Thread.sleep(50);
+                            Thread.sleep(800);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
 
@@ -134,7 +134,6 @@ public class Level_5 extends AppCompatActivity {
             }).start();
 
         } else {
-            a = false;
             click.setText("START");}
             btncatch.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -180,7 +179,7 @@ public class Level_5 extends AppCompatActivity {
                 }
 
             } if (count==7){
-                Intent intent= new Intent(Level_5.this, Level_6.class);
+                Intent intent= new Intent(Level_6.this, GameLevels.class);
                 startActivity(intent);
 
             }else{
