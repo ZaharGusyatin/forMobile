@@ -16,7 +16,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Level_6 extends AppCompatActivity {
-    LinearLayout tvRed, tvYel, tvGree;
+    LinearLayout tvColor;
     private boolean a = false;
     Button click, btncatch;
     private int counter = 0;
@@ -39,9 +39,8 @@ public class Level_6 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level_6);
-        tvGree = (LinearLayout) findViewById(R.id.LinGreen);
-        tvRed = (LinearLayout) findViewById(R.id.LinRed);
-        tvYel = (LinearLayout) findViewById(R.id.LinYellow);
+        tvColor = (LinearLayout) findViewById(R.id.LayoutColor);
+
         click = (Button) findViewById(R.id.clickkkk);
         btncatch = (Button) findViewById(R.id.btncatch);
        imageView =(ImageView)findViewById(R.id.imageView10);
@@ -61,7 +60,7 @@ public class Level_6 extends AppCompatActivity {
             }
         });
         TextView tv = findViewById(R.id.textView);
-        tv.setText(R.string.levelushaka5);
+        tv.setText(R.string.levelushaka6);
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);//скрываем заголовок
@@ -105,26 +104,41 @@ public class Level_6 extends AppCompatActivity {
                         counter++;
                         switch (counter) {
                             case 1:
-                                tvGree.setBackgroundColor(getResources().getColor(R.color.grenn));
-                                tvYel.setBackgroundColor(getResources().getColor(R.color.grey));
-                                tvRed.setBackgroundColor(getResources().getColor(R.color.grey));
+                                tvColor.setBackgroundResource(R.drawable.stylenew_green);
                                 break;
                             case 2:
-                                tvYel.setBackgroundColor(getResources().getColor(R.color.red));
-                                tvRed.setBackgroundColor(getResources().getColor(R.color.grey));
-                                tvGree.setBackgroundColor(getResources().getColor(R.color.grey));
+                                tvColor.setBackgroundResource(R.drawable.stylenew_blue);
                                 break;
                             case 3:
-                                tvRed.setBackgroundColor(getResources().getColor(R.color.red));
-                                tvGree.setBackgroundColor(getResources().getColor(R.color.grey));
-                                tvYel.setBackgroundColor(getResources().getColor(R.color.grey));
+                                tvColor.setBackgroundResource(R.drawable.stylenew_grey);
+                                break;
+                            case 4:
+                                tvColor.setBackgroundResource(R.drawable.stylenew_dark);
+                                break;
+                            case 5:
+                                tvColor.setBackgroundResource(R.drawable.stylenew_yellow);
+                                break;
+                            case 6:
+                                tvColor.setBackgroundResource(R.drawable.stylenew_white);
+                                break;
+                            case 7:
+                                tvColor.setBackgroundResource(R.drawable.stylenew_pink);
+                                break;
+                            case 8:
+                                tvColor.setBackgroundResource(R.drawable.stylenew_orange);
+                                break;
+                            case 9:
+                                tvColor.setBackgroundResource(R.drawable.stylenew_red);
                                 counter=0;
                                 break;
+
+
                         }
                         try {
-                            Thread.sleep(800);
+                            Thread.sleep(200);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
+
 
                         }
 
@@ -140,51 +154,10 @@ public class Level_6 extends AppCompatActivity {
                 public void onClick(View v) {
 
 
-            if (counter==1) {
-                imageView.setImageResource(R.drawable.img_true);
-            } else {
-                imageView.setImageResource(R.drawable.img_wrong);
 
-            }
 
-            if(counter==1){
-                if(count<7){
-                    count=count+1;
-                }
-                for (int b=0;b<7;b++){
-                    TextView qwe=findViewById(progressPoints[b]);
-                    qwe.setBackgroundResource(R.drawable.style_points1);
-                }
-                for(int b=0;b<count;b++){
-                    TextView qwe =findViewById(progressPoints[b]);
-                    qwe.setBackgroundResource(R.drawable.style_points12);
-                    counter=0;
-                }
-            }else{//права больше левой
-                if (count>0){// больше нкля
-                    if(count>=1){
-                        count=0;
-                    }else{
 
-                    }
-                }
 
-                for (int b=0;b<6;b++){
-                    TextView qwe=findViewById(progressPoints[b]);
-                    qwe.setBackgroundResource(R.drawable.style_points1);
-                }
-                for(int b=0;b<count;b++){
-                    TextView qwe =findViewById(progressPoints[b]);
-                    qwe.setBackgroundResource(R.drawable.style_points12);
-                }
-
-            } if (count==7){
-                Intent intent= new Intent(Level_6.this, GameLevels.class);
-                startActivity(intent);
-
-            }else{
-
-            }
     }
 });
         }

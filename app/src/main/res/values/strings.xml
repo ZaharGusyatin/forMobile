@@ -10,6 +10,7 @@
     <string name="levelushaka3">Уровень 3</string>
     <string name="levelushaka4">Уровень 4</string>
     <string name="levelushaka5">Уровень 5</string>
+    <string name="levelushaka6">Уровень 6</string>
     <string name="Paris2">Нажимай на число, что меньше и проходи дальше</string>
     <string name="lvl12345">Уровень 2</string>
     <string name="GoOn">Продолжить</string>
@@ -23,6 +24,7 @@
     <string name="montains2">а теперь попробуем наоборот, кликай по тем, что меньше(проверка приложения)</string>
     <string name="RIGHT">Уровень:</string>
     <string name="True">да</string>
-    <string name="False">неа!!!</string>
+    <string name="Go">go</string>
+    <string name="False">не</string>
     <string name="Flowers">Белых цветов не бывает – на самом деле они бесцветные, то есть не имеющие каких-либо цветных пигментов и просто отражающие солнечный свет. Чёрного пигмента в мире цветов также не существует – цвет может быть либо тёмно-красным, либо насыщенно фиолетовым.</string>
 </resources>

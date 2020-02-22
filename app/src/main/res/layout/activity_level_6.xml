@@ -137,96 +137,36 @@
                 android:orientation="horizontal"
 
 
-                >
-
-                <LinearLayout
-                    android:id="@+id/LinGreen"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:layout_weight="2"
-                    android:background="@color/grey"
-                    android:textSize="30dp"
-                    android:orientation="horizontal" />
-                <LinearLayout
-                    android:id="@+id/LinOrange"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:layout_weight="2"
-                    android:background="@color/grey"
-
-                    android:textColor="@color/blaaaaaaaaaaaack"
-                    android:textSize="30dp"
-                    android:orientation="horizontal" />
-                <LinearLayout
-                    android:id="@+id/LinBlue"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:layout_weight="2"
-                    android:background="@color/grey"
-
-                    android:textColor="@color/blaaaaaaaaaaaack"
-                    android:textSize="30dp"
-                    android:orientation="horizontal" />
-                <LinearLayout
-                    android:id="@+id/LinRed"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:layout_weight="2"
-                    android:background="@color/grey"
-
-                    android:textColor="@color/blaaaaaaaaaaaack"
-                    android:textSize="30dp"
-                    android:orientation="horizontal" />
-
-            </LinearLayout>
+                />
 
             <LinearLayout
                 android:id="@+id/line4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
+
                 <LinearLayout
-                    android:id="@+id/LinDark"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:layout_weight="2"
-                    android:background="@color/grey"
+                    android:id="@+id/LayoutColor"
+                    android:layout_width="190dp"
+                    android:layout_height="190dp"
+                    android:background="@drawable/stylenew_yellow"
+                    android:layout_marginLeft="90dp"
 
                     android:textColor="@color/blaaaaaaaaaaaack"
                     android:textSize="30dp"
                     android:orientation="horizontal" />
-
-                <LinearLayout
-                    android:id="@+id/LinWhite"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:layout_weight="2"
-                    android:background="@color/grey"
-
+                <Button
+                    android:id="@+id/clickkkk"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="70dp"
+                    android:gravity="center"
+                    android:text="@string/Go"
+                    android:textAllCaps="false"
                     android:textColor="@color/blaaaaaaaaaaaack"
-                    android:textSize="30dp"
-                    android:orientation="horizontal" />
-                <LinearLayout
-                    android:id="@+id/LinYellow"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:layout_weight="2"
-                    android:background="@color/grey"
-
-                    android:textColor="@color/blaaaaaaaaaaaack"
-                    android:textSize="30dp"
-                    android:orientation="horizontal" />
-                <LinearLayout
-                    android:id="@+id/LinPink"
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:layout_weight="2"
-                    android:background="@color/grey"
-
-                    android:textColor="@color/blaaaaaaaaaaaack"
-                    android:textSize="30dp"
-                    android:orientation="horizontal" />
+                    android:onClick="CLICK"/>
 
 
 
@@ -238,16 +178,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="catch" />
-        <Button
-            android:id="@+id/clickkkk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:gravity="center"
-            android:text="@string/False"
-            android:textAllCaps="false"
-            android:textColor="@color/blaaaaaaaaaaaack"
-            android:onClick="CLICK"/>
+
 
 
     </LinearLayout>
