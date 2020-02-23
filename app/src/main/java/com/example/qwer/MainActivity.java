@@ -14,20 +14,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startMainActivity();
         Window w=getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
-    public void menulevels(View view) {
-        try {
-            Intent intent = new Intent(MainActivity.this, GameLevels.class);
-            startActivity(intent);
-            finish();
-        } catch (Exception e){
+    public void startMainActivity(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Intent intent = new Intent(MainActivity.this, GameLevels.class);
+                startActivity(intent);
 
-        }
-    }
-
-    public void CLICK(View view) {
+            }
+        }).start();
     }
 }

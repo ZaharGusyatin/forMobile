@@ -31,17 +31,5 @@
         android:layout_marginBottom="15dp"
         android:padding="10dp">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/press_button"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="@string/Start"
-            android:textColor="@color/black70"
-            android:textSize="34dp"
-            android:onClick="menulevels"/>
     </LinearLayout>
 </RelativeLayout>
